@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <form method="GET" action="search?title={title}" onsubmit="validateForm()">
+            <label for="title">Title:</label>
+            <input id="title" type="text" name="title" />
+            <input type="submit" value="Find My Show!">
+        </form>
+{% endblock %}

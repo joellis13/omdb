@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>You searched for {{title}}.</h1>
+        <img src={{poster}} alt="{{title}}">
+        <h3>
+            The Plot is:
+        </h3>
+        <p>{{plot}}</p>
+{% endblock %}
