@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
+from PIL import Image
 import cgi
 import os
 import requests
@@ -24,6 +25,11 @@ class User(db.Model):
         self.email = email
         self.password = password
 
+class Movie(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    
+
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -37,7 +43,7 @@ def search():
     if response['Response'] == "False":
         title = "something we couldn't find"
         plot = "Sorry, your entry was not recognized."
-        poster = None
+        poster = None #Image.open("C:\Users\Jonathan\Documents\00_Scratch\omdb\static\images\sadimirPutin.jpg")
     else:
         title = response['Title']
         plot = response['Plot']

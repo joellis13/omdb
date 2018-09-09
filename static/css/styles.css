@@ -1,0 +1,16 @@
+body {background-color: gold;}
+
+.center {
+    text-align: center;
+    padding: 150px 0;
+    vertical-align: middle;
+}
+
+.result {
+    text-align: center;
+    padding: 50px;
+}
+.top_left {
+    padding-left: 40px;
+    padding-top: 40px;
+}
