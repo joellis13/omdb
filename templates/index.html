@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "baseIndex.html" %}
 
 {% block content %}
         <div class="center">
             <img src="/static/images/logo.jpg" alt="Logo" style="width:500px;">
             <p>
-            <form method="GET" action="search?title={title}" onsubmit="validateForm()">
+            <form id="search_form" method="GET" action="search?title={title}" onsubmit="validateForm()">
                 <label for="title">Title:</label>
                 <input id="title" type="text" name="title" />
                 <input type="submit" value="Find My Show!">

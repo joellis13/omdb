@@ -2,22 +2,22 @@
 
 {% block content %}
 
-    <div class="top_left">
-        <img src="/static/images/logo.jpg" alt="Logo" style="width:345px;">
-        <p>
-        <form method="GET" action="search?title={title}" onsubmit="validateForm()">
-            <label for="title">Title:</label>
-            <input id="title" type="text" name="title" />
-            <input type="submit" value="Find My Show!">
-        </form></p>
-    </div>
-    <div style=" text-align: center; padding: 50px 0; ">
-    <h1>You searched for {{title}}.</h1>
-    <img src={{poster}} alt="{{title}}">
-    <h3>
-        The Plot is:
-    </h3>
-    <p>{{plot}}</p>
+    <div style="padding-left: 350px; padding-right: 350px; padding-top: 100px">
+        <div>
+            {% if poster == None %}
+            <img style=" height:200px " src="/static/images/sadimirPutin.jpg">
+            {% else %}
+            <img style=" height:200px " src={{poster}} alt="{{title}}">
+            {% endif %}
+        </div>
+        <div>
+            <h1>{{title}}</h1>
+            <p>IMDb Rating:  {{rating}} | 
+                <form method="POST" action="/user/list">
+                    <input type="hidden" value="{{title}}" />
+                    <input type="submit" value="Add to my list" /></p>
+            <p>{{plot}}</p>
+        </div>
     </div>
 
 {% endblock %}

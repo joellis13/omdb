@@ -28,6 +28,10 @@ class User(db.Model):
 class Movie(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+
+    def __init__(self, title):
+        self.title = title
     
 
 @app.route("/")
@@ -43,13 +47,15 @@ def search():
     if response['Response'] == "False":
         title = "something we couldn't find"
         plot = "Sorry, your entry was not recognized."
+        rating = 0
         poster = None #Image.open("C:\Users\Jonathan\Documents\00_Scratch\omdb\static\images\sadimirPutin.jpg")
     else:
         title = response['Title']
         plot = response['Plot']
+        rating = response['imdbRating']
         poster = response['Poster']
 
-    return render_template('search.html', title=title, plot=plot, poster=poster)
+    return render_template('search.html', title=title, plot=plot, poster=poster, rating=rating)
 
 @app.route("/account")
 def account():
