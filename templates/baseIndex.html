@@ -10,6 +10,20 @@
 </head>
 <body>
 
+    <div style="float: right; padding: 20px;">
+        {% if 'username' in session %}
+        <div  style="padding-top: 5px;">
+            Logged in as: {{ session['username'] }}
+            <form action="/logout" method="POST" id="logout">
+                <input type="submit" value="Log Out" />
+            </form></div>
+        {% else %}
+            <div style="display: inline-block; padding-top: 10px; padding-left: 20px;"><a href="signup">signup</a></div>
+            <div style="display: inline-block; padding-top: 10px; padding-left: 20px;"><a href="login">login</a></div>
+        {% endif %}
+        
+    </div>
+
     {% block content %}
     {% endblock %}
 

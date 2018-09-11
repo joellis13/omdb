@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div style="padding-left: 350px; padding-right: 350px; padding-top: 200px">
+    <h1>Users:</h1>
     <ul>
         {% for user in users %}
-        <li>User ID: {{user.username}}<br>
+        <li style="list-style-type: none; "><p style="padding : 0; margin : 0; font-size: 30px; ">{{user.username}}</p><br>
         User email: {{user.email}}</li>
-        <br>
+        <br><br>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}

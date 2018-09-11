@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div style="padding-left: 350px; padding-right: 350px; padding-top: 100px">
+    <div style="padding-left: 350px; padding-right: 350px; padding-top: 200px">
         <div>
             {% if poster == None %}
             <img style=" height:200px " src="/static/images/sadimirPutin.jpg">
@@ -12,7 +12,7 @@
         </div>
         <div>
             <h1>{{title}}</h1>
-            <form method="POST" action="watchlist">
+            <form method="POST">
                 <label style="display:inline-block;">IMDb Rating:  {{rating}} | 
                 <input type="hidden" value="{{title}}" name="title" />
                 <input type="hidden" value="{{plot}}" name="plot" />
