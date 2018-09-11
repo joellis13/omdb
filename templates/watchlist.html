@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>My Watchlist</h1>
+
+    {% for title in titles %}
+    
+    <div style="padding-left: 400px; padding-right: 400px; padding-top: 50px; border: dodgerblue">
+        <div style="padding: none;">
+            {% if poster == None %}
+            <a href="search?title={{title.title}}"><img style=" height:150px " src="/static/images/sadimirPutin.jpg"></a>
+            {% else %}
+            <a href="search?title={{title.title}}"><img style=" height:150px " src={{title.poster}} alt="{{title.poster}}"></a>
+            {% endif %}
+        </div>
+        <div style="padding: none;">
+            <h1 style="padding: none;">{{title.title}}</h1>
+            <p>IMDb Rating:  {{title.rating}} </p>
+            <p>{{title.plot}}</p>
+        </div>
+    </div>
+
+    {% endfor %}
+{% endblock %}

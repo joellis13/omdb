@@ -12,11 +12,15 @@
         </div>
         <div>
             <h1>{{title}}</h1>
-            <p>IMDb Rating:  {{rating}} | 
-                <form method="POST" action="/user/list">
-                    <input type="hidden" value="{{title}}" />
-                    <input type="submit" value="Add to my list" /></p>
-            <p>{{plot}}</p>
+            <form method="POST" action="watchlist">
+                <label style="display:inline-block;">IMDb Rating:  {{rating}} | 
+                <input type="hidden" value="{{title}}" name="title" />
+                <input type="hidden" value="{{plot}}" name="plot" />
+                <input type="hidden" value="{{rating}}" name="rating" />
+                <input type="hidden" value="{{poster}}" name="poster" />
+                <input type="submit" value="Add to my list" />
+            </form>
+            <p>{{plot}}</p></label>
         </div>
     </div>
 
