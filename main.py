@@ -3,6 +3,10 @@
 # TODO: give search an autocomplete function
 # TODO: make search search exact title (done), and also similar titles
 # TODO: look into web-hosting
+# TODO: find release date info
+# TODO: BOOTSTRAP
+# TODO: add password hash
+# TODO: contact Guidebox and workout access
 
 from flask import Flask, request, redirect, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
